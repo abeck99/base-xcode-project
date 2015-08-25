@@ -12,7 +12,6 @@
 		CDA7F23B1A749075002E35DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDA7F2301A749075002E35DA /* LaunchScreen.xib */; };
 		CDA7F23C1A749075002E35DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA7F2321A749075002E35DA /* Main.storyboard */; };
 		CDA7F23D1A749075002E35DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDA7F2341A749075002E35DA /* Images.xcassets */; };
-		CDA7F23E1A749075002E35DA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDA7F2361A749075002E35DA /* Info.plist */; };
 		CDA7F23F1A749075002E35DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA7F2371A749075002E35DA /* main.m */; };
 		CDA7F2401A749075002E35DA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA7F2391A749075002E35DA /* ViewController.m */; };
 		CDA7F24E1A7514CA002E35DA /* APP_PREFIX_MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA7F24D1A7514CA002E35DA /* APP_PREFIX_MainViewController.m */; };
@@ -185,8 +184,8 @@
 		CDA7F1D51A7484CD002E35DA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "BASE_PROJECT_ORG_NAME";
+				LastUpgradeCheck = 0630;
 				TargetAttributes = {
 					CDA7F1DC1A7484CD002E35DA = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -221,7 +220,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDA7F23E1A749075002E35DA /* Info.plist in Resources */,
 				CDA7F23D1A749075002E35DA /* Images.xcassets in Resources */,
 				CDA7F23B1A749075002E35DA /* LaunchScreen.xib in Resources */,
 				CDA7F23C1A749075002E35DA /* Main.storyboard in Resources */,

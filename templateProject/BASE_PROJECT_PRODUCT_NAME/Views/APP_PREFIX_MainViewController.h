@@ -12,7 +12,5 @@
 @interface APP_PREFIX_MainView : AB_BaseViewController
 
 + (APP_PREFIX_MainView*) masterController;
-+ (void) loadPage:(id)tag;
-+ (void) loadPage:(id)tag withData:(id)viewData;
 
 @end

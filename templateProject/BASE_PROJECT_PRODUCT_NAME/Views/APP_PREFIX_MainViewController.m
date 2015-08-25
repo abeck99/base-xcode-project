@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 BASE_PROJECT_ORG_NAME. All rights reserved.
 //
 
-#import "APP_PREFIX_MainView.h"
+#import "APP_PREFIX_MainViewController.h"
 
 @implementation APP_PREFIX_MainView
 
@@ -19,18 +19,6 @@
     }
     
     return nil;
-}
-
-+ (void) loadPage:(id)tag
-{
-    APP_PREFIX_MainView* controller = [self masterController];
-    [controller goToControllerWithTag:tag];
-}
-
-+ (void) loadPage:(id)tag withData:(id)viewData
-{
-    APP_PREFIX_MainView* controller = [self masterController];
-    [controller goToControllerWithTag:tag withData:viewData];
 }
 
 @end
