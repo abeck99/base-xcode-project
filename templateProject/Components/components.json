@@ -1,0 +1,213 @@
+{
+	"prefix": "APP_PREFIX",
+    "companyName": "BASE_PROJECT_ORG_NAME",
+    "projectName": "BASE_PROJECT_PRODUCT_NAME",
+    "createdByName": "Andrew",
+	"controllersListFileLocation": "{{ projectName }}/Views",
+	"controllerClassFileLocation": "{{ projectName }}/Views/Controllers/{{ uppercaseName }}",
+	"controllerXibFileLocation": "{{ projectName }}/Views/Xibs/{{ uppercaseName }}",
+	"popupClassFileLocation": "{{ projectName }}/Popups/Controllers/{{ uppercaseName }}",
+	"popupXibFileLocation": "{{ projectName }}/Popups/Xibs/{{ uppercaseName }}",
+	"dataSourceClassFileLocation": "{{ projectName }}/TableViews/Controllers/{{ uppercaseName }}",
+	"dataSourceCellClassFileLocation": "{{ projectName }}/TableViews/Controllers/{{ dataSource[\"uppercaseName\"] }}",
+	"dataSourceCellXibFileLocation": "{{ projectName }}/TableViews/Xibs/{{ dataSource[\"uppercaseName\"] }}",
+    "modelClassFileLocation": "{{ projectName }}/Models/{{ groupName }}",
+
+    "controllersFileTemplates": {
+        "filename": "className",
+        "files": [
+            "Templates/Controllers/XXX_Controllers.h",
+            "Templates/Controllers/XXX_Controllers.m"
+        ]
+    },
+
+    "controllerClassTemplates": {
+        "filename": "className",
+        "files": [
+            "Templates/Controllers/XXX_ViewController.h",
+            "Templates/Controllers/XXX_ViewController.m"
+        ]
+    },
+
+    "controllerSectionTemplates": {
+        "filename": "className",
+        "files": [
+            "Templates/Controllers/XXX_SectionViewController.h",
+            "Templates/Controllers/XXX_SectionViewController.m"
+        ]
+    },
+    
+    "controllerXibTemplates": {
+        "filename": "uppercaseName",
+        "files": [
+            "Templates/Controllers/BaseView.xib"
+        ]
+    },
+
+    "controllerSectionXibTemplates": {
+        "filename": "uppercaseName",
+        "files": [
+            "Templates/Controllers/SectionView.xib"
+        ]
+    },
+
+    "popupClassTemplates": {
+        "filename": "className",
+        "files": [
+            "Templates/Popups/Popup.h",
+            "Templates/Popups/Popup.m"
+        ]
+    },
+
+    "popupXibTemplates": {
+        "filename": "xibName",
+        "files": [
+            "Templates/Popups/Popup.xib"
+        ]
+    },
+
+    "dataSourceClassTemplates": {
+        "filename": "className",
+        "files": [
+            "Templates/DataSources/DataSource.h",
+            "Templates/DataSources/DataSource.m"
+        ]
+    },
+
+    "dataSourceCellClassTemplates": {
+        "filename": "className",
+        "files": [
+            "Templates/DataSources/DataSourceTableViewCell.h",
+            "Templates/DataSources/DataSourceTableViewCell.m"
+        ]
+    },
+
+    "dataSourceCellXibTemplates": {
+        "filename": "xibName",
+        "files": [
+            "Templates/DataSources/DataSourceTableViewCell.xib"
+        ]
+    },
+
+    "modelClassTemplates": {
+        "filename": "className",
+        "files": [
+            "Templates/Models/Model.h",
+            "Templates/Models/Model.m"
+        ]
+    },
+
+
+    "controllers":
+    [
+    ],
+
+    "popups":
+    [
+    ],
+
+    "dataSources":
+    [
+    ],
+
+    "models":
+    [
+    ],
+
+
+    "examples":
+    {
+        "controllers":
+        [
+            {
+                "name": "normalController"
+            },
+            {
+                "name": "sectionController",
+                "defaultController": "someOtherController"
+            }
+        ],
+
+        "popups":
+        [
+            {
+                "name": "examplePopup"
+            }
+        ],
+
+        "dataSources":
+        [
+            {
+                "name": "exampleDataSourceWithDefaultCell"
+            },
+            {
+                "name": "exampleDataSourceExplicitCells",
+                "cells":
+                [
+                    "someCell1",
+                    "someCell2"
+                ]
+            }
+        ],
+
+        "models":
+        [
+            {
+                "exampleGroup":
+                [
+                    {
+                        "name": "modelName",
+                        "fields":
+                        [
+                            {
+                                "name": "stringField",
+                                "type": "string",
+                                "jsonFieldName": "string_field",
+                            },
+                            {
+                                "name": "anotherStringField",
+                                "type": "string"
+                            },
+                            {
+                                "name": "someEnumField",
+                                "type": "enum",
+                                "enumName": "AB_SomeEnum",
+                                "enumValues":
+                                [
+                                    "StateA",
+                                    "StateB"
+                                ]
+                            },
+                            {
+                                "name": "someDateField",
+                                "type": "isoDate"
+                            },
+                            {
+                                "name": "someFloatValue",
+                                "type": "float"
+                            },
+                            {
+                                "name": "someIntValue",
+                                "type": "int"
+                            },
+                            {
+                                "name": "someBoolValue",
+                                "type": "bool"
+                            },
+                            {
+                                "name": "someModelReference",
+                                "type": "model",
+                                "referenceModel": "anotherModel"
+                            },
+                            {
+                                "name": "someModelReference",
+                                "type": "modelList",
+                                "referenceModel": "anotherModel"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,166 @@
+// apply plugin: 'xcode'
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath "com.thoughtworks.xstream:xstream:1.4.2"
+  }
+}
+
+def xmlLocation = "./projectData.xml"
+def workingDir = "build/workingProject"
+
+task cleanWorkingProjectDirectory(type: Delete) {
+  delete workingDir
+}
+
+task copyTemplateProjectToBuild(dependsOn: "cleanWorkingProjectDirectory", type: Copy) {
+  from 'templateProject'
+  into "${workingDir}/BASE_PROJECT_FOLDER_NAME"
+}
+
+ProjectData getProjectData(String filename) {
+  file(filename).withInputStream{ ins -> 
+    return new XStream().fromXML(ins)
+  }
+}
+
+// TODO: Figure out if something is binary or text file
+void processFile(File file, ProjectData defaultProjectData, ProjectData projectData) {
+  def parentFile = file.getParentFile()
+  def originalName = file.getName()
+
+  def replacedName = replaceAllProjectNames(file.getName(), defaultProjectData, projectData)
+  if ( replacedName != originalName )
+  {
+    def newFile = new File(parentFile.getAbsolutePath(), replacedName)
+    if (!file.renameTo(newFile)) {
+      throw new GradleException("File rename failed! ${originalName} to ${replacedName}")
+    }
+
+    file = newFile
+  }
+
+  if ( !file.isDirectory() ) {
+    def fileText = file.text
+    file.write(replaceAllProjectNames(fileText, defaultProjectData, projectData))
+  } else {
+      file.eachFile { childFile ->
+        processFile(childFile, defaultProjectData, projectData)
+    }
+  }
+}
+
+String replaceAllProjectNames(String inString, ProjectData from, ProjectData to) {
+  from.properties.each { k, v ->
+    if ( v instanceof String ) {
+      inString = inString.replaceAll(v, to.getProperty(k))
+    }
+  }
+  return inString
+}
+
+// TODO: Vars for working project dir and xmlLocation
+import com.thoughtworks.xstream.XStream
+
+// TODO: Publish locally
+// TODO: Better dependency chain...
+task createProject(dependsOn: copyTemplateProjectToBuild){
+  ext.destDir = new File(workingDir)
+  doLast {
+    def projectData = getProjectData(xmlLocation)
+    def defaultProjectData = new ProjectData()
+    processFile(new File(workingDir), defaultProjectData, projectData)
+  }
+}
+
+task createSampleData << {
+  def f = file(xmlLocation)
+  f.createNewFile()
+  f.withOutputStream { out -> 
+    new XStream().toXML(new ProjectData(), out)
+  }
+}
+
+class ProjectData {
+  String productName = "BASE_PROJECT_PRODUCT_DISPLAY_NAME"
+  String projectDirectoryName = "BASE_PROJECT_FOLDER_NAME"
+  String projectDevelopmentName = "BASE_PROJECT_PRODUCT_NAME"
+  String originizationName = "BASE_PROJECT_ORG_NAME"
+  String orginizationID = "BASE_PROJECT_ORG_ID"
+  String bundleID = "BASE_PROJECT_BUNDLE_ID"
+  String appPrefix = "APP_PREFIX_"
+}
+
+
+
+
+
+
+
+
+
+
+
+//  workingDir "$projectDir"
+//  executable "ruby"
+//  args "./rubyScripts/create.rb"
+//  environment GEM_HOME: "gems"
+
+
+
+// Gem stuff
+apply plugin: GemPlugin
+
+gems {
+  gem name: "xcodeproj", version: "0.21.0"
+}
+
+
+
+// Plugin info
+import org.gradle.api.tasks.Exec
+
+// TODO: Make gem tasks work with inputs and outputs
+// TODO: Make sure artifacitng works, so depedencies will work on build machines
+class GemPlugin implements Plugin<Project> {
+  void apply(Project project) {
+
+    Task installAllGemsTask
+    List<Task> installGemTasks = []
+
+    project.extensions.create("gems", GemPluginExtension, project)
+
+    installAllGemsTask = project.task("installGems") {
+      dependsOn: installGemTasks
+    }
+
+    project.extensions.gem = { def map ->
+      String name = map.name
+      String version = map.version
+      def task = project.task("installGem${name}", type:Exec) {
+        commandLine "gem"
+        args "install", "${name}", "-v", "${version}", "-i", "gems"
+        workingDir project.projectDir
+        dependsOn 
+        doLast {
+          println "Installed ${name}"
+        }
+      }
+
+      installGemTasks.add(task)
+      installAllGemsTask.dependsOn = installGemTasks
+    }
+  }
+}
+
+
+class GemPluginExtension {
+  Project project
+
+  GemPluginExtension(Project _project) {
+    project = _project
+  }
+}
+

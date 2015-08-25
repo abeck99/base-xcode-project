@@ -1,0 +1,9 @@
+<ProjectData>
+  <productName>ProductNameNoSpaces</productName>
+  <projectDirectoryName>ProjectDirectoryNoSpaces</projectDirectoryName>
+  <projectDevelopmentName>DevelopmentName</projectDevelopmentName>
+  <originizationName>Orginization Name</originizationName>
+  <orginizationID>com.orgname</orginizationID>
+  <bundleID>com.orgname.appname</bundleID>
+  <appPrefix>XX_</appPrefix>
+</ProjectData>

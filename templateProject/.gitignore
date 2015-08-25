@@ -30,10 +30,6 @@ DerivedData
 .gradle
 build/
 gems/
-gradle/
-gradlew
-gradlew.bat
-temp/
 
 # Ignore Gradle GUI config
 gradle-app.setting
