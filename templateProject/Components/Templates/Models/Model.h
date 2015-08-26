@@ -7,6 +7,9 @@
 //
 
 #import <AB_BaseModel.h>
+{% if fields.location %}
+#import <AB_ComparableLocation.h>
+{% endif %}
 
 {% for enumField in fields["enum"] %}
 typedef enum : NSUInteger
@@ -16,8 +19,8 @@ typedef enum : NSUInteger
     {{ enumField.enumName }}_{{ enumValue }},
 {% endfor %}
 } {{ enumField.enumName }};
-{% endfor %}
 
+{% endfor %}
 @interface {{ className }} : AB_BaseModel
 
 {% for stringField in fields["string"] %}

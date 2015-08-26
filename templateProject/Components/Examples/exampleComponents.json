@@ -84,6 +84,12 @@
                         "name": "someModelReference",
                         "type": "modelList",
                         "referenceModel": "anotherModel"
+                    },
+                    {
+                        "name": "someLocationReference",
+                        "type": "location",
+                        "latName": "lat",
+                        "lngName": "lng"
                     }
                 ]
             }

@@ -7,17 +7,24 @@
 //
 
 #import "{{ className }}.h"
+{% for modelField in fields["model"] %}
+#import "{{modelField.referenceModelClass}}.h"
+{% endfor %}
+{% for modelField in fields["modelList"] %}
+#import "{{modelField.referenceModelClass}}.h"
+{% endfor %}
+
 
 @implementation {{ className }}
 
 + (NSDictionary*)JSONKeyPathsByPropertyKey
 {
     return @{
-{% for fieldList in fields %}
+{% for fieldList in fields.values() %}
 {% for field in fieldList %}
-{% if field["type"] == "location" %}
-           @"{{ field.name }}": @[@"{{ field.latName }}", @"{{ field.lngName }}"],
-{{% elseif %}
+{% if field.type == "location" %}
+            @"{{ field.name }}": @[@"{{ field.latName }}", @"{{ field.lngName }}"],
+{% else %}
             @"{{ field.name }}": @"{{ field.jsonFieldName }}",
 {% endif %}
 {% endfor %}
@@ -41,13 +48,13 @@ MAP_DECIMAL({{floatField.name}})
 MAP_NUMBER({{boolField.name}}, NSNumberFormatterNoStyle)
 {% endfor %}
 {% for modelField in fields["model"] %}
-MAP_SUBOBJECT({{modelField.name}})
+MAP_SUBOBJECT({{modelField.name}}, {{modelField.referenceModelClass}})
 {% endfor %}
 {% for modelField in fields["modelList"] %}
-MAP_SUBOBJECT_ARRAY({{modelField.name}})
+MAP_SUBOBJECT_ARRAY({{modelField.name}}, {{modelField.referenceModelClass}})
 {% endfor %}
 {% for locationField in fields["location"] %}
-MAP_LOCATION({{locationField.name}}, {{locationField.latName}}, {{locationField.lngName}})
+MAP_LOCATION({{locationField.name}}, "{{locationField.latName}}", "{{locationField.lngName}}")
 {% endfor %}
 
 {% for enumField in fields["enum"] %}

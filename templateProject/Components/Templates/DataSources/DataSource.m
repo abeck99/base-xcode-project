@@ -35,7 +35,7 @@
 - (void) setupCell:(UIView*)cell withData:(id)data dataIndexPath:(NSIndexPath*)indexPath
 {
 {% for cellType in cellTypes %}
-    if ([cell isKindOfClass[{{ cellType.className }} class]])
+    if ([cell isKindOfClass:[{{ cellType.className }} class]])
     {
         // {{ cellType.className }}* {{ cellType.lowercaseName }} = ({{ cellType.className }}*) cell;
     }
