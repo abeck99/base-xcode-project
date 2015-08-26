@@ -1,5 +1,5 @@
 {
-	"prefix": "APP_PREFIX",
+	"prefix": "APP_PREFIX_",
     "companyName": "BASE_PROJECT_ORG_NAME",
     "projectName": "BASE_PROJECT_PRODUCT_NAME",
     "createdByName": "Andrew",
@@ -151,63 +151,61 @@
         ],
 
         "models":
-        [
-            {
-                "exampleGroup":
-                [
-                    {
-                        "name": "modelName",
-                        "fields":
-                        [
-                            {
-                                "name": "stringField",
-                                "type": "string",
-                                "jsonFieldName": "string_field",
-                            },
-                            {
-                                "name": "anotherStringField",
-                                "type": "string"
-                            },
-                            {
-                                "name": "someEnumField",
-                                "type": "enum",
-                                "enumName": "AB_SomeEnum",
-                                "enumValues":
-                                [
-                                    "StateA",
-                                    "StateB"
-                                ]
-                            },
-                            {
-                                "name": "someDateField",
-                                "type": "isoDate"
-                            },
-                            {
-                                "name": "someFloatValue",
-                                "type": "float"
-                            },
-                            {
-                                "name": "someIntValue",
-                                "type": "int"
-                            },
-                            {
-                                "name": "someBoolValue",
-                                "type": "bool"
-                            },
-                            {
-                                "name": "someModelReference",
-                                "type": "model",
-                                "referenceModel": "anotherModel"
-                            },
-                            {
-                                "name": "someModelReference",
-                                "type": "modelList",
-                                "referenceModel": "anotherModel"
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
+        {
+            "exampleGroup":
+            [
+                {
+                    "name": "modelName",
+                    "fields":
+                    [
+                        {
+                            "name": "stringField",
+                            "type": "string",
+                            "jsonFieldName": "string_field",
+                        },
+                        {
+                            "name": "anotherStringField",
+                            "type": "string"
+                        },
+                        {
+                            "name": "someEnumField",
+                            "type": "enum",
+                            "enumName": "AB_SomeEnum",
+                            "enumValues":
+                            [
+                                "StateA",
+                                "StateB"
+                            ]
+                        },
+                        {
+                            "name": "someDateField",
+                            "type": "isoDate"
+                        },
+                        {
+                            "name": "someFloatValue",
+                            "type": "float"
+                        },
+                        {
+                            "name": "someIntValue",
+                            "type": "int"
+                        },
+                        {
+                            "name": "someBoolValue",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "someModelReference",
+                            "type": "model",
+                            "referenceModel": "anotherModel"
+                        },
+                        {
+                            "name": "someModelReference",
+                            "type": "modelList",
+                            "referenceModel": "anotherModel"
+                        }
+                    ]
+                }
+            ]
+        }
     }
 }

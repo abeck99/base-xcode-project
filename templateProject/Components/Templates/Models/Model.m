@@ -6,9 +6,9 @@
 //  Copyright (c) {{ currentYear }} {{ companyName }}. All rights reserved.
 //
 
-#import "EA_CoreLoopNoteModel.h"
+#import "{{ className }}.h"
 
-@implementation EA_CoreLoopNoteModel
+@implementation {{ className }}
 
 + (NSDictionary*)JSONKeyPathsByPropertyKey
 {

@@ -18,7 +18,7 @@ typedef enum : NSUInteger
 } {{ enumField.enumName }};
 {% endfor %}
 
-@interface {{ className }} : EA_BaseModel
+@interface {{ className }} : AB_BaseModel
 
 {% for stringField in fields["string"] %}
 @property(readonly, strong) NSString* {{ stringField.name }}; // {{ stringField.jsonFieldName }}

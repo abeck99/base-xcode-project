@@ -5,6 +5,8 @@ import datetime
 import collections
 import re
 
+scriptDir = os.path.dirname(os.path.realpath(__file__))
+
 with open(os.path.join("Components", "components.json")) as f:
     componentDescriptions = json.loads(f.read())
 
@@ -39,7 +41,9 @@ def Generate(templates, toPath, info, overwrite):
     for templateFilePath in templates["files"]:
         outputfilename = finalInfo[templates["filename"]] + os.path.splitext(templateFilePath)[1]
 
-        with open(templateFilePath) as f:
+        realTemplateFilename = os.path.join(scriptDir, templateFilePath)
+
+        with open(realTemplateFilename) as f:
             fileTemplate = jinjaEnvironment.from_string(f.read())
 
         finalInfo["fileName"] = outputfilename
@@ -140,6 +144,6 @@ for groupName, models in componentDescriptions.get("models", {}).iteritems():
                 field["jsonFieldName"] = ToCamelCase(field["name"])
             if "referenceModel" in field:
                 field["referenceModelClass"] = prefix + ToUpperCase(field["referenceModel"])
-            d["fields"][fieldInfo["type"]].append(field)
+            d["fields"][field["type"]].append(field)
 
         Generate(componentDescriptions["modelClassTemplates"], componentDescriptions["modelClassFileLocation"], d, False)
