@@ -1,0 +1,92 @@
+{
+    "controllers":
+    [
+        {
+            "name": "normalController"
+        },
+        {
+            "name": "sectionController",
+            "defaultController": "someOtherController"
+        }
+    ],
+
+    "popups":
+    [
+        {
+            "name": "examplePopup"
+        }
+    ],
+
+    "dataSources":
+    [
+        {
+            "name": "exampleDataSourceWithDefaultCell"
+        },
+        {
+            "name": "exampleDataSourceExplicitCells",
+            "cells":
+            [
+                "someCell1",
+                "someCell2"
+            ]
+        }
+    ],
+
+    "models":
+    {
+        "exampleGroup":
+        [
+            {
+                "name": "modelName",
+                "fields":
+                [
+                    {
+                        "name": "stringField",
+                        "type": "string",
+                        "jsonFieldName": "string_field"
+                    },
+                    {
+                        "name": "anotherStringField",
+                        "type": "string"
+                    },
+                    {
+                        "name": "someEnumField",
+                        "type": "enum",
+                        "enumName": "AB_SomeEnum",
+                        "enumValues":
+                        [
+                            "StateA",
+                            "StateB"
+                        ]
+                    },
+                    {
+                        "name": "someDateField",
+                        "type": "isoDate"
+                    },
+                    {
+                        "name": "someFloatValue",
+                        "type": "float"
+                    },
+                    {
+                        "name": "someIntValue",
+                        "type": "int"
+                    },
+                    {
+                        "name": "someBoolValue",
+                        "type": "bool"
+                    },
+                    {
+                        "name": "someModelReference",
+                        "type": "model",
+                        "referenceModel": "anotherModel"
+                    },
+                    {
+                        "name": "someModelReference",
+                        "type": "modelList",
+                        "referenceModel": "anotherModel"
+                    }
+                ]
+            }
+        ]
+    }
+}

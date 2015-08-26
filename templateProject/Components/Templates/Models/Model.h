@@ -6,7 +6,7 @@
 //  Copyright (c) {{ currentYear }} {{ companyName }}. All rights reserved.
 //
 
-#import "AB_BaseModel.h"
+#import <AB_BaseModel.h>
 
 {% for enumField in fields["enum"] %}
 typedef enum : NSUInteger

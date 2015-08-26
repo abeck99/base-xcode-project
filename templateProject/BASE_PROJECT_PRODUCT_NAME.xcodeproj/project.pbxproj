@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CDA7F1FD1A7484CD002E35DA /* BASE_PROJECT_PRODUCT_NAMETests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA7F1FC1A7484CD002E35DA /* BASE_PROJECT_PRODUCT_NAMETests.m */; };
 		CDA7F23A1A749075002E35DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA7F22F1A749075002E35DA /* AppDelegate.m */; };
 		CDA7F23B1A749075002E35DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDA7F2301A749075002E35DA /* LaunchScreen.xib */; };
 		CDA7F23C1A749075002E35DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA7F2321A749075002E35DA /* Main.storyboard */; };
@@ -17,21 +16,8 @@
 		CDA7F24E1A7514CA002E35DA /* APP_PREFIX_MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA7F24D1A7514CA002E35DA /* APP_PREFIX_MainViewController.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		CDA7F1F71A7484CD002E35DA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CDA7F1D51A7484CD002E35DA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CDA7F1DC1A7484CD002E35DA;
-			remoteInfo = BASE_PROJECT_PRODUCT_NAME;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		CDA7F1DD1A7484CD002E35DA /* BASE_PROJECT_PRODUCT_DISPLAY_NAME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BASE_PROJECT_PRODUCT_DISPLAY_NAME.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDA7F1F61A7484CD002E35DA /* BASE_PROJECT_PRODUCT_NAMETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BASE_PROJECT_PRODUCT_NAMETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDA7F1FB1A7484CD002E35DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CDA7F1FC1A7484CD002E35DA /* BASE_PROJECT_PRODUCT_NAMETests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BASE_PROJECT_PRODUCT_NAMETests.m; sourceTree = "<group>"; };
 		CDA7F22E1A749075002E35DA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CDA7F22F1A749075002E35DA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CDA7F2311A749075002E35DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -53,13 +39,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CDA7F1F31A7484CD002E35DA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -70,13 +49,14 @@
 				CDA7F24D1A7514CA002E35DA /* APP_PREFIX_MainViewController.m */,
 			);
 			name = MainView;
+			path = BASE_PROJECT_PRODUCT_NAME;
 			sourceTree = "<group>";
 		};
 		CDA7F1D41A7484CD002E35DA = {
 			isa = PBXGroup;
 			children = (
-				CDA7F1DF1A7484CD002E35DA /* BASE_PROJECT_PRODUCT_NAME */,
-				CDA7F1F91A7484CD002E35DA /* BASE_PROJECT_PRODUCT_NAMETests */,
+				CD4D7F061B8D1E2700A2B820 /* MainView */,
+				CDA7F22D1A749075002E35DA /* BoilerPlate */,
 				CDA7F1DE1A7484CD002E35DA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,35 +65,8 @@
 			isa = PBXGroup;
 			children = (
 				CDA7F1DD1A7484CD002E35DA /* BASE_PROJECT_PRODUCT_DISPLAY_NAME.app */,
-				CDA7F1F61A7484CD002E35DA /* BASE_PROJECT_PRODUCT_NAMETests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		CDA7F1DF1A7484CD002E35DA /* BASE_PROJECT_PRODUCT_NAME */ = {
-			isa = PBXGroup;
-			children = (
-				CD4D7F061B8D1E2700A2B820 /* MainView */,
-				CDA7F22D1A749075002E35DA /* BoilerPlate */,
-			);
-			path = BASE_PROJECT_PRODUCT_NAME;
-			sourceTree = "<group>";
-		};
-		CDA7F1F91A7484CD002E35DA /* BASE_PROJECT_PRODUCT_NAMETests */ = {
-			isa = PBXGroup;
-			children = (
-				CDA7F1FC1A7484CD002E35DA /* BASE_PROJECT_PRODUCT_NAMETests.m */,
-				CDA7F1FA1A7484CD002E35DA /* Supporting Files */,
-			);
-			path = BASE_PROJECT_PRODUCT_NAMETests;
-			sourceTree = "<group>";
-		};
-		CDA7F1FA1A7484CD002E35DA /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				CDA7F1FB1A7484CD002E35DA /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		CDA7F22D1A749075002E35DA /* BoilerPlate */ = {
@@ -128,7 +81,8 @@
 				CDA7F2381A749075002E35DA /* ViewController.h */,
 				CDA7F2391A749075002E35DA /* ViewController.m */,
 			);
-			path = BoilerPlate;
+			name = BoilerPlate;
+			path = BASE_PROJECT_PRODUCT_NAME/BoilerPlate;
 			sourceTree = "<group>";
 		};
 		CDA7F2351A749075002E35DA /* Supporting Files */ = {
@@ -160,39 +114,17 @@
 			productReference = CDA7F1DD1A7484CD002E35DA /* BASE_PROJECT_PRODUCT_DISPLAY_NAME.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CDA7F1F51A7484CD002E35DA /* BASE_PROJECT_PRODUCT_NAMETests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CDA7F2031A7484CD002E35DA /* Build configuration list for PBXNativeTarget "BASE_PROJECT_PRODUCT_NAMETests" */;
-			buildPhases = (
-				CDA7F1F21A7484CD002E35DA /* Sources */,
-				CDA7F1F31A7484CD002E35DA /* Frameworks */,
-				CDA7F1F41A7484CD002E35DA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CDA7F1F81A7484CD002E35DA /* PBXTargetDependency */,
-			);
-			name = BASE_PROJECT_PRODUCT_NAMETests;
-			productName = BASE_PROJECT_PRODUCT_NAMETests;
-			productReference = CDA7F1F61A7484CD002E35DA /* BASE_PROJECT_PRODUCT_NAMETests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		CDA7F1D51A7484CD002E35DA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				ORGANIZATIONNAME = "BASE_PROJECT_ORG_NAME";
 				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "BASE_PROJECT_ORG_NAME";
 				TargetAttributes = {
 					CDA7F1DC1A7484CD002E35DA = {
 						CreatedOnToolsVersion = 6.1.1;
-					};
-					CDA7F1F51A7484CD002E35DA = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = CDA7F1DC1A7484CD002E35DA;
 					};
 				};
 			};
@@ -210,7 +142,6 @@
 			projectRoot = "";
 			targets = (
 				CDA7F1DC1A7484CD002E35DA /* BASE_PROJECT_PRODUCT_NAME */,
-				CDA7F1F51A7484CD002E35DA /* BASE_PROJECT_PRODUCT_NAMETests */,
 			);
 		};
 /* End PBXProject section */
@@ -223,13 +154,6 @@
 				CDA7F23D1A749075002E35DA /* Images.xcassets in Resources */,
 				CDA7F23B1A749075002E35DA /* LaunchScreen.xib in Resources */,
 				CDA7F23C1A749075002E35DA /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CDA7F1F41A7484CD002E35DA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,23 +171,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CDA7F1F21A7484CD002E35DA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CDA7F1FD1A7484CD002E35DA /* BASE_PROJECT_PRODUCT_NAMETests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		CDA7F1F81A7484CD002E35DA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CDA7F1DC1A7484CD002E35DA /* BASE_PROJECT_PRODUCT_NAME */;
-			targetProxy = CDA7F1F71A7484CD002E35DA /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CDA7F2301A749075002E35DA /* LaunchScreen.xib */ = {
@@ -383,40 +291,6 @@
 			};
 			name = Release;
 		};
-		CDA7F2041A7484CD002E35DA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = BASE_PROJECT_PRODUCT_NAMETests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BASE_PROJECT_PRODUCT_NAME.app/BASE_PROJECT_PRODUCT_NAME";
-			};
-			name = Debug;
-		};
-		CDA7F2051A7484CD002E35DA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = BASE_PROJECT_PRODUCT_NAMETests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BASE_PROJECT_PRODUCT_NAME.app/BASE_PROJECT_PRODUCT_NAME";
-			};
-			name = Release;
-		};
 		CDA7F2411A751306002E35DA /* App Store */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -460,21 +334,6 @@
 				INFOPLIST_FILE = "$(SRCROOT)/BASE_PROJECT_PRODUCT_NAME/BoilerPlate/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = BASE_PROJECT_PRODUCT_DISPLAY_NAME;
-			};
-			name = "App Store";
-		};
-		CDA7F2431A751306002E35DA /* App Store */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = BASE_PROJECT_PRODUCT_NAMETests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BASE_PROJECT_PRODUCT_NAME.app/BASE_PROJECT_PRODUCT_NAME";
 			};
 			name = "App Store";
 		};
@@ -524,21 +383,6 @@
 			};
 			name = "Test Flight";
 		};
-		CDA7F2461A75130F002E35DA /* Test Flight */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = BASE_PROJECT_PRODUCT_NAMETests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BASE_PROJECT_PRODUCT_NAME.app/BASE_PROJECT_PRODUCT_NAME";
-			};
-			name = "Test Flight";
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -560,17 +404,6 @@
 				CDA7F2021A7484CD002E35DA /* Release */,
 				CDA7F2421A751306002E35DA /* App Store */,
 				CDA7F2451A75130F002E35DA /* Test Flight */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CDA7F2031A7484CD002E35DA /* Build configuration list for PBXNativeTarget "BASE_PROJECT_PRODUCT_NAMETests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CDA7F2041A7484CD002E35DA /* Debug */,
-				CDA7F2051A7484CD002E35DA /* Release */,
-				CDA7F2431A751306002E35DA /* App Store */,
-				CDA7F2461A75130F002E35DA /* Test Flight */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

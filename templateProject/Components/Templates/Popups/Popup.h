@@ -6,7 +6,7 @@
 //  Copyright (c) {{ currentYear }} {{ companyName }}. All rights reserved.
 //
 
-#import "AB_Popup.h"
+#import <AB_Popup.h>
 
 @interface {{ className }} : AB_Popup
 
