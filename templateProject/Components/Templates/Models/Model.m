@@ -15,7 +15,11 @@
     return @{
 {% for fieldList in fields %}
 {% for field in fieldList %}
+{% if field["type"] == "location" %}
+           @"{{ field.name }}": @[@"{{ field.latName }}", @"{{ field.lngName }}"],
+{{% elseif %}
             @"{{ field.name }}": @"{{ field.jsonFieldName }}",
+{% endif %}
 {% endfor %}
 {% endfor %}
           };
@@ -41,6 +45,9 @@ MAP_SUBOBJECT({{modelField.name}})
 {% endfor %}
 {% for modelField in fields["modelList"] %}
 MAP_SUBOBJECT_ARRAY({{modelField.name}})
+{% endfor %}
+{% for locationField in fields["location"] %}
+MAP_LOCATION({{locationField.name}}, {{locationField.latName}}, {{locationField.lngName}})
 {% endfor %}
 
 {% for enumField in fields["enum"] %}

@@ -165,6 +165,8 @@ for groupName, models in components.get("models", {}).iteritems():
                 field["jsonFieldName"] = ToCamelCase(field["name"])
             if "referenceModel" in field:
                 field["referenceModelClass"] = prefix + ToUpperCase(field["referenceModel"])
+            if "readonly" not in field:
+                field["readonly"] = True
             d["fields"][field["type"]].append(field)
 
         Generate("modelClassTemplates", "modelClassFileLocation", d, False)
