@@ -6,12 +6,11 @@
 //  Copyright (c) {{ currentYear }} {{ companyName }}. All rights reserved.
 //
 
-#import <AB_DataSourceBase.h>
+#import "AB_DataSourceBase.h"
 
 @interface {{ className }} : AB_DataSourceBase
 {
-{% for cellType in cellTypes %}
-    AB_SectionInfo* {{ cellType.lowercaseName }}Section;
+{% for cellType in cellTypes %} AB_SectionInfo* {{ cellType.lowercaseName }}Section;
 {% endfor %}
 }
 

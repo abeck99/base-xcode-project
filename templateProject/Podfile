@@ -1,11 +1,10 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-pod 'GoogleAnalytics-iOS-SDK'
-pod 'CrashlyticsFramework'
+use_frameworks!
+
 pod 'CocoaLumberjack'
 pod 'VCTransitionsLibrary'
 pod 'IQKeyboardManager'
 pod 'ReactiveCocoa'
 pod 'Underscore.m'
-pod 'Mantle'
 pod 'AB_Framework', :git => 'https://github.com/abeck99/AB_Framework.git'

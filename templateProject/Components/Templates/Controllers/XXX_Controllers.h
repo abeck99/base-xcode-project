@@ -6,7 +6,7 @@
 //  Copyright (c) {{ currentYear }} {{ companyName }}. All rights reserved.
 //
 
-#import <AB_Controllers.h>
+#import "AB_Controllers.h"
 
 @interface {{ className }} : AB_Controllers
 

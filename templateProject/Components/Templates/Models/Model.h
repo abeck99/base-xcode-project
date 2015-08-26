@@ -6,9 +6,9 @@
 //  Copyright (c) {{ currentYear }} {{ companyName }}. All rights reserved.
 //
 
-#import <AB_BaseModel.h>
+#import "AB_BaseModel.h"
 {% if fields.location %}
-#import <AB_ComparableLocation.h>
+#import "AB_ComparableLocation.h"
 {% endif %}
 
 {% for enumField in fields["enum"] %}
